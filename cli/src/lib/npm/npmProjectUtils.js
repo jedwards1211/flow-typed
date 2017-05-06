@@ -92,9 +92,6 @@ export function getPackageJsonDependencies(
     const contentSection = pkgJson.content[section];
     if (contentSection) {
       Object.keys(contentSection).forEach(pkgName => {
-        if (deps[pkgName]) {
-          throw new Error(`Found ${pkgName} listed twice in package.json!`);
-        }
         deps[pkgName] = contentSection[pkgName];
       });
     }
